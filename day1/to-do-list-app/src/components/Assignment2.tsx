@@ -1,5 +1,29 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+// import { Table } from "antd";
+
+// const columns = [
+//   {
+//     title: "ID",
+//     dataIndex: "id",
+//     key: "id",
+//   },
+//   {
+//     title: "UserID",
+//     dataIndex: "userId",
+//     id: "userId",
+//   },
+//   {
+//     title: "Title",
+//     dataIndex: "title",
+//     id: "title",
+//   },
+//   {
+//     title: "Body",
+//     dataIndex: "body",
+//     id: "body",
+//   },
+// ];
 export default function Assignment2() {
   const [data, setData] = useState<object[]>([]);
   const [isloading, setIsLoading] = useState<boolean>(false);
@@ -26,6 +50,7 @@ export default function Assignment2() {
   if (isloading) return <div>is Loading....</div>;
   return (
     <div>
+      {/* <Table dataSource={data} columns={columns} /> */}
       <table>
         <thead>
           <tr>
@@ -36,7 +61,7 @@ export default function Assignment2() {
           </tr>
         </thead>
         <tbody>
-          {data.slice(0, 5).map((info: any) => (
+          {data.slice(0, 10).map((info: any) => (
             <tr key={info.id}>
               <td>{info.id}</td>
               <td>{info.userId}</td>
